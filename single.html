@@ -3,60 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nailchemy — Alchemia koloru na końcach Twoich palców</title>
+    <title>Nailchemy - Pojedynczy Wpis</title>
+    <!-- Bootstrap 5 CSS CDN -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome Icons CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- External Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="navbar-placeholder"></div>
 
-<!-- OFFCANVAS KOSZYK -->
-<div class="offcanvas offcanvas-end offcanvas-custom" tabindex="-1" id="cartDrawer">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title"><i class="fa-solid fa-bag-shopping text-primary-brand"></i> Twój Koszyk</h5>
-        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
-    </div>
-    <div class="offcanvas-body d-flex flex-column p-0">
-        <div class="p-3 flex-grow-1 overflow-y-auto" id="cartDrawerItemsList"></div>
-        <div class="cart-drawer-footer">
-            <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-white-50">Suma:</span>
-                <span class="h5 mb-0 text-accent fw-bold" id="cartDrawerSubtotal">64,80 PLN</span>
+    <!-- NAVBAR -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-custom">
+            <div class="container">
+                <div class="d-flex align-items-center gap-3">
+                    <button class="btn-categories-trigger" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoriesDrawer">
+                        <i class="fa-solid fa-bars text-accent"></i>
+                        <span class="d-none d-sm-inline">Kategorie</span>
+                    </button>
+                    <a class="navbar-brand" href="index.html">
+                        <svg class="brand-logo-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M38 66 C38 60, 62 60, 62 66 L62 70 C62 70, 78 74, 78 92 C78 108, 65 114, 50 114 C35 114, 22 108, 22 92 C22 74, 38 70, 38 70 Z" stroke="#BF8EA0" stroke-width="3.5" fill="#2C2226"/>
+                            <rect x="42" y="58" width="16" height="8" rx="2" stroke="#BF8EA0" stroke-width="3" fill="#1E1619"/>
+                            <path d="M26 90 C32 106, 68 106, 74 90 C70 98, 58 106, 50 96 C42 106, 30 98, 26 90 Z" fill="#F0DFD5" opacity="0.9"/>
+                            <path d="M42 85 L50 98 L58 85" stroke="#BF8EA0" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                            <g transform="translate(10, -5) rotate(18 50 50)">
+                                <rect x="58" y="24" width="18" height="28" rx="4" stroke="#F0DFD5" stroke-width="3" fill="#BF8EA0"/>
+                                <line x1="58" y1="52" x2="52" y2="64" stroke="#F0DFD5" stroke-width="3" stroke-linecap="round"/>
+                            </g>
+                            <path d="M50 56 C46 44, 30 46, 32 34 C34 22, 54 20, 52 10 C50 2, 42 4, 44 12 C46 20, 32 26, 36 38 C38 44, 48 48, 50 56 Z" stroke="#BF8EA0" stroke-width="3" fill="none" stroke-linecap="round"/>
+                            <circle cx="58" cy="18" r="2" fill="#F0DFD5"/>
+                        </svg>
+                        Nailchemy
+                    </a>
+                </div>
+                <button class="navbar-toggler ms-auto me-2" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNailchemy">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNailchemy">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0 align-items-lg-center me-lg-3">
+                        <li class="nav-item"><a class="nav-link " href="index.html">Strona Główna</a></li>
+                        <li class="nav-item"><a class="nav-link " href="sklep.html">Sklep</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="blog.html">Blog</a></li>
+                    </ul>
+                </div>
+                <div class="d-flex align-items-center gap-2">
+                    <a href="produkt.html" class="nav-icon-btn" title="Produkt">
+                        <i class="fa-solid fa-gem"></i>
+                    </a>
+                    <a href="single.html" class="nav-icon-btn" title="Wpis">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </a>
+                </div>
             </div>
-            <a href="koszyk.html" class="btn btn-hero-solid w-100 py-2 text-decoration-none text-center">Przejdź do pełnego koszyka</a>
+        </nav>
+    </header>
+
+    <!-- OFFCANVAS KATEGORIE -->
+    <div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="categoriesDrawer">
+        <div class="offcanvas-header">
+            <h5 class="offcanvas-title"><i class="fa-solid fa-layer-group text-primary-brand"></i> Kategorie</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <div class="mb-4">
+                <div class="category-group-title"><i class="fa-solid fa-house"></i> Strona Główna</div>
+                <a class="category-item-link" href="index.html">Przejdź do Home</a>
+            </div>
+            <div class="mb-4">
+                <div class="category-group-title"><i class="fa-solid fa-store"></i> E-Commerce</div>
+                <a class="category-item-link" href="sklep.html">Katalog / Sklep</a>
+                <a class="category-item-link" href="produkt.html">Pojedynczy Produkt</a>
+            </div>
+            <div class="mb-4">
+                <div class="category-group-title"><i class="fa-solid fa-blog"></i> Blog & Artykuły</div>
+                <a class="category-item-link" href="blog.html">Archiwum Bloga</a>
+                <a class="category-item-link" href="single.html">Pojedynczy Wpis</a>
+            </div>
         </div>
     </div>
-</div>
 
     
-    
-    <div class="container py-5">
-        <a href="blog.html" class="btn btn-sm btn-outline-light mb-4 rounded-pill px-3 text-decoration-none"><i class="fa-solid fa-arrow-left me-2"></i> Powrót do bloga</a>
-        <div class="sticky-summary-box">
-            <h2 class="text-accent mb-3">Jak wykonać idealny Babyboomer krok po kroku?</h2>
-            <p class="text-white-50">Babyboomer to jedna z najpopularniejszych technik stylizacji paznokci, łącząca elegancję francuskiego manikiuru z miękkim cieniowaniem. W tym artykule dowiesz się, jakich produktów użyć i jak krok po kroku osiągnąć niesamowity efekt bez smug.</p>
+    <main class="container py-5">
+        <nav aria-label="breadcrumb" class="mb-4">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="index.html" class="text-accent text-decoration-none">Strona Główna</a></li>
+                <li class="breadcrumb-item"><a href="blog.html" class="text-accent text-decoration-none">Blog</a></li>
+                <li class="breadcrumb-item active text-white-50" aria-current="page">Magia minerałów: Baza kauczukowa</li>
+            </ol>
+        </nav>
+
+        <div class="article-container">
+            <article>
+                <h1 class="display-6 fw-bold text-accent mb-3">Magia minerałów: Dlaczego Twoje paznokcie potrzebują bazy kauczukowej</h1>
+
+                <div class="d-flex flex-wrap align-items-center gap-3 text-white-50 mb-4 pb-3 border-bottom border-secondary" style="font-size: 0.9rem;">
+                    <span><i class="fa-regular fa-calendar me-1 text-accent"></i> 5 marca 2026</span>
+                    <span><i class="fa-solid fa-user-pen me-1 text-accent"></i> Dr Katarzyna Alchemiczna</span>
+                    <span><i class="fa-regular fa-clock me-1 text-accent"></i> Szacowany czas: 4 min</span>
+                    <span class="badge bg-secondary text-accent border border-primary"><i class="fa-solid fa-tag me-1"></i> Pielęgnacja</span>
+                </div>
+
+                <div class="mb-4 rounded-4 overflow-hidden border border-secondary">
+                    <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=1200&q=80" class="w-100" style="max-height: 420px; object-fit: cover;">
+                </div>
+
+                <div class="article-content">
+                    <p class="article-lead">
+                        Zdrowa, lśniąca i odporna na uszkodzenia płytka to fundament każdej trwałej stylizacji hybrydowej. Wraz z rozwojem biotechnologii kosmetycznej standardowe bazy ustępują miejsce nowoczesnym formułom kauczukowym.
+                    </p>
+                    <p>
+                        Wielu stylistów oraz osób wykonujących manicure w domowym zaciszu boryka się z problemem zapowietrzania się materiału oraz pękania lakieru na miękkich paznokciach.
+                    </p>
+
+                    <h2 class="h4 text-accent mt-4 mb-3">Jak działa baza kauczukowa w praktyce?</h2>
+                    <p>Dzięki unikalnej strukturze cząsteczkowej, kauczuk zawarty w bazie tworzy na powierzchni naturalnego paznokcia niezwykle elastyczną, a zarazem twardą powłokę ochronną.</p>
+                </div>
+            </article>
         </div>
-    </div>
+    </main>
 
 
-    <div id="footer-placeholder"></div>
+    <footer>
+        <div class="container">
+            <div class="row gy-4">
+                <div class="col-lg-4">
+                    <a class="footer-brand d-flex align-items-center gap-2" href="index.html">Nailchemy</a>
+                    <p class="pe-lg-3">Pionierskie połączenie alchemii pielęgnacyjnej, minerałów i najwyższej jakości lakierów.</p>
+                </div>
+                <div class="col-md-4 col-lg-2 ms-auto">
+                    <h6 class="text-accent fw-bold mb-3">Nawigacja</h6>
+                    <ul class="footer-links-list list-unstyled">
+                        <li><a href="index.html">Strona Główna</a></li>
+                        <li><a href="sklep.html">Sklep</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="produkt.html">Produkt</a></li>
+                        <li><a href="single.html">Wpis</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 col-lg-3">
+                    <h6 class="text-accent fw-bold mb-3">Podmiot</h6>
+                    <p class="mb-1"><strong>Nailchemy Sp. z o.o.</strong></p>
+                    <p class="mb-1">ul. Alchemiczna 12, Warszawa</p>
+                    <p class="mb-0">NIP: 5210001122</p>
+                </div>
+            </div>
+            <div class="footer-bottom text-center">
+                <p class="mb-0">&copy; 2026 <strong>Nailchemy Sp. z o.o.</strong> Wszelkie prawa zastrzeżone.</p>
+            </div>
+        </div>
+    </footer>
 
-<div id="toastContainer" class="position-fixed bottom-0 end-0 p-4 d-flex flex-column gap-2" style="z-index: 1090; pointer-events: none;"></div>
-
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-        function showToast(msg) {
-            const container = document.getElementById('toastContainer');
-            if (!container) return;
-            const toast = document.createElement('div');
-            toast.className = 'nailchemy-toast';
-            toast.innerHTML = `<i class="fa-solid fa-circle-check text-primary-brand fs-5"></i><div>${msg}</div>`;
-            container.appendChild(toast);
-            setTimeout(() => toast.remove(), 3000);
-        }
-    </script>
-    
-    <script src="includes.js"></script>
 </body>
 </html>
