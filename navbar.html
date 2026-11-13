@@ -1,0 +1,75 @@
+<!-- NAVBAR -->
+<header class="sticky-top" style="top: 0;">
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container">
+            <div class="d-flex align-items-center gap-3">
+                <button class="btn-categories-trigger" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoriesDrawer">
+                    <i class="fa-solid fa-bars text-accent"></i>
+                    <span>Kategorie</span>
+                </button>
+                <a class="navbar-brand" href="index.html">
+                    <svg class="brand-logo-svg" viewBox="0 0 100 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M38 66 C38 60, 62 60, 62 66 L62 70 C62 70, 78 74, 78 92 C78 108, 65 114, 50 114 C35 114, 22 108, 22 92 C22 74, 38 70, 38 70 Z" stroke="#BF8EA0" stroke-width="3.5" fill="#2C2226"/>
+                        <rect x="42" y="58" width="16" height="8" rx="2" stroke="#BF8EA0" stroke-width="3" fill="#1E1619"/>
+                        <path d="M26 90 C32 106, 68 106, 74 90 C70 98, 58 106, 50 96 C42 106, 30 98, 26 90 Z" fill="#F0DFD5" opacity="0.9"/>
+                    </svg>
+                    Nailchemy
+                </a>
+            </div>
+
+            <button class="navbar-toggler border-0 text-accent" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
+                <i class="fa-solid fa-bars fs-4"></i>
+            </button>
+
+            <div class="collapse navbar-collapse" id="mainNav">
+                <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Strona Główna</a></li>
+                    <li class="nav-item"><a class="nav-link" href="sklep.html">Sklep</a></li>
+                    <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#kontakt-section">Kontakt</a></li>
+                </ul>
+
+                <div class="d-flex align-items-center gap-2 mt-3 mt-lg-0">
+                    <a class="nav-icon-btn" href="polubione.html" title="Polubione produkty">
+                        <i class="fa-solid fa-heart text-danger"></i>
+                        <span class="wishlist-badge-count" id="wishlistBadgeCount">2</span>
+                    </a>
+                    <a class="nav-icon-btn" href="konto.html" title="Moje konto">
+                        <i class="fa-solid fa-user text-accent"></i>
+                    </a>
+                    <button class="nav-cart-btn" data-bs-toggle="offcanvas" data-bs-target="#cartDrawer" title="Twój koszyk">
+                        <i class="fa-solid fa-bag-shopping"></i>
+                        <span>Koszyk</span>
+                        <span class="cart-badge-count" id="globalCartBadge">2</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- OFFCANVAS KATEGORIE -->
+<div class="offcanvas offcanvas-start offcanvas-custom" tabindex="-1" id="categoriesDrawer">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title"><i class="fa-solid fa-layer-group text-primary-brand"></i> Kategorie Produktów</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="mb-3">
+            <div class="category-group-title"><i class="fa-solid fa-bottle-droplet"></i> Lakierowa Alchemia</div>
+            <a class="category-item-link" href="sklep.html">Lakiery Hybrydowe Premium</a>
+            <a class="category-item-link" href="sklep.html">Bazy & Topy Odżywcze</a>
+            <a class="category-item-link" href="sklep.html">Żele Budujące UV/LED</a>
+        </div>
+        <div class="mb-3">
+            <div class="category-group-title"><i class="fa-solid fa-wand-magic-sparkles"></i> Akcesoria i Zdobienia</div>
+            <a class="category-item-link" href="sklep.html">Pędzle i Frezy Ceramiczne</a>
+            <a class="category-item-link" href="sklep.html">Pyłki i Efekty Magnetyczne</a>
+        </div>
+        <div class="mb-3">
+            <div class="category-group-title"><i class="fa-solid fa-spa"></i> Pielęgnacja & SPA</div>
+            <a class="category-item-link" href="sklep.html">Oliwiki do Skórek</a>
+            <a class="category-item-link" href="sklep.html">Kremy do Dłoni</a>
+        </div>
+    </div>
+</div>
